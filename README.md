@@ -2,7 +2,7 @@
 
 Here we go!!
 
-### Summary
+### Goal
 The user will play a game that allows them to guess a random (randomly generated) number. They make a guess by entering a number in an input. They have 4 chances (tries) to guess correctly. If they guess correctly, then the game displays a message saying that they won. If they guess incorrectly, the game will tell them if they guessed too high or too low. If they try 4 times without guessing correctly, then the game tells them they lost, and no more input can be added (disable further input). The user may reset the game to play again.
 
 ### HTML
