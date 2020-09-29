@@ -44,13 +44,17 @@
                     <button class="start-button">Start Game?</button>
                 <br>
 -->
-                <input class="guess-input" placeholder="Enter number here" type="number">
+                <input id="guess-input" placeholder="Enter number here" type="number">
                 <br>
-                <span class="guess-span"><i>Will you guess high or low or correctly?</i></span>
+                <button class id="guess-button">Click to submit your guess.</button>
                 <br>
-                <span class="tries-span"><i>You have 4 tries / X many tries left.</i></span>
+                <span id="guess-span"><i>Will you guess high or low or correctly?</i></span>
                 <br>
-                <button class="reset-button">Reset Game</button>
+                <span id="tries-remaining-span"><i>You have 4 tries / X many tries left.</i></span>
+                <br>
+                <span id="results-span"><i>You WON or LOST.</i></span>
+                <br>
+                <button id="reset-button">Reset Game</button>
 
             </p>
 
@@ -62,7 +66,7 @@
     </footer>
 -->
     <script type="module" src="app.js"></script>
-    
+
 </body>
 
 </html>

@@ -11,7 +11,7 @@ The user will play a game that allows them to guess a random (randomly generated
 1. Content
     - Instructions for game 
 1. Create elements to be grabbed by JS
-<!--    - BUTTON to Start game -->
+    - BUTTON to submit Guess
     - BUTTON to Reset game
     - INPUT to enter Guess
     - SPAN to Display if Guess was correct:
@@ -23,12 +23,12 @@ The user will play a game that allows them to guess a random (randomly generated
     
 ### JavaScript
 1. Create IDs for HTML elements:
-    1. start-button
-    1. reset-button
     1. guess-input
+    1. guess-button
     1. guess-span
-    1. tries-span
+    1. tries-remaining-span
     1. results-span
+    1. reset-button
 1. Functions
     1. compareNumbers(guess, correctNumber)
         - test function:
