@@ -29,3 +29,18 @@ export function compareNumbers(guess, correctNumber) {
 }
 
 // set event listeners to update state and DOM
+
+/*
+When user clicks button, the game will
+-generate a realNumber
+-take the guess from the INPUT
+-compare it to the correctNumber
+-tell user if they WIN or guessed wrong
+--if they guessed wrong, -1 guess
+--if they have 0 tries left, they LOSE
+---no more input accepted
+*/
+
+guessButton.addEventListener('click', () => {
+    console.log('the user made a guess!');
+});
