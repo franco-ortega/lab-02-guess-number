@@ -3,11 +3,10 @@
 const guessInput = document.getElementById('guess-input');
 const guessButton = document.getElementById('guess-button');
 const guessSpan = document.getElementById('guess-span');
-const triesRemainingSpan = document.getElementById('tries-remaining-span')
-const resultsSpan = document.getElementById('results-span');
+const triesSpan = document.getElementById('tries-span')
 const resetButton = document.getElementById('reset-button');
 
-console.log(guessInput, guessButton, guessSpan, triesRemainingSpan, resultsSpan, resetButton);
+console.log(guessInput, guessButton, guessSpan, triesSpan, resetButton);
 
 console.log(guessSpan.textContent)
 // initialize state
@@ -38,7 +37,7 @@ When user clicks button, the game will
 ---no more input accepted
 */
 
-const correctNumber = Math.floor((Math.random() *20) +1);
+let correctNumber = Math.floor((Math.random() *20) +1);
 
 guessButton.addEventListener('click', () => {
 
@@ -61,11 +60,12 @@ console.log(0);
 console.log(-1);
         triesRemaining--;
         guessSpan.textContent = 'Too Low!';
-
+        triesSpan.textContent = `You have ${triesRemaining} guesses left.`
     } else if (judge === 1) {
 console.log(1);
         triesRemaining--;
         guessSpan.textContent = 'Too High!';
+        triesSpan.textContent = `You have ${triesRemaining} guesses left.`
     }
 
     if (triesRemaining === 0) {
@@ -81,3 +81,12 @@ console.log(judge);
 console.log(triesRemaining + ' tries remaining');
 
 });
+
+
+resetButton.addEventListener('click', () => {
+    document.getElementById('guess-input').disabled = false;
+    document.getElementById('guess-button').disabled = false;
+    correctNumber = Math.floor((Math.random() *20) +1);
+    triesRemaining = 4;
+    triesSpan.textContent = `You have ${triesRemaining} guesses left.`;
+})
