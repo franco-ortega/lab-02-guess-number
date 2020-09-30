@@ -62,7 +62,7 @@ console.log(1);
 
     if (triesRemaining === 0) {
         guessSpan.textContent = `Game over. The correct number was ${correctNumber}`;
-        triesSpan.textContent = '';
+        triesSpan.textContent = 'Try again?';
         document.getElementById('guess-input').disabled = true;
         document.getElementById('guess-button').disabled = true;
     }

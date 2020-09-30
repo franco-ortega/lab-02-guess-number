@@ -8,9 +8,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
 <!--
     <link rel="stylesheet" href="styles/reset.css">
+-->
+
     <link rel="stylesheet" href="styles/style.css">
+
+<!--
     <link rel="stylesheet" href="styles/home.css">
 -->
+
     <title>Guess A Number Game</title>
 </head>
 
@@ -28,23 +33,16 @@
             <img class="main-logo" src="assets/alchemy-logo.png"/>
 -->
             <h2>
-                Welcome to the Guess A Number game!!!
+                Guess A Number!
             </h2>
 
             
             <p class="instructions">
-                These are the game instructions. Do this and that until then. Got it?
-
+                Welcome to a numbers guessing game. Guess a number between 1 and 20. If you guess correctly, you win! You have 4 chances to win. Win or lose, you can always try again!
             </p>
-            <hr />
+            
             <p>
-                Interactive game stuff is here. Play away!!
-                <br>
-<!--
-                    <button class="start-button">Start Game?</button>
-                <br>
--->
-                <input id="guess-input" placeholder="Enter number here" type="number" />
+                <input id="guess-input" min="1" max="20" placeholder="Enter number here" type="number" />
                 <br>
                 <button class id="guess-button">Click to submit your guess.</button>
                 <br>
@@ -53,7 +51,6 @@
                 <span id="tries-span">You have 4 tries.</span>
                 <br>
                 <button id="reset-button">Reset Game</button>
-
             </p>
 
         </section>
