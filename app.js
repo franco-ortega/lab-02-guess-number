@@ -15,7 +15,7 @@ guessButton.addEventListener('click', () => {
 
     if (judge === 0) {
         guessSpan.textContent = 'You Win!!!';
-        triesSpan.textContent = 'Try again?';
+        triesSpan.textContent = 'Play again?';
         document.getElementById('guess-input').disabled = true;
         document.getElementById('guess-button').disabled = true;
     } else if (judge === -1) {
@@ -32,7 +32,7 @@ guessButton.addEventListener('click', () => {
 
     if (triesRemaining === 0) {
         guessSpan.textContent = `Game over. The correct number was ${correctNumber}`;
-        triesSpan.textContent = 'Try again?';
+        triesSpan.textContent = 'Play again?';
         document.getElementById('guess-input').disabled = true;
         document.getElementById('guess-button').disabled = true;
     }
