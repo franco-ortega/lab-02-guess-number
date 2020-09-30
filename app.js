@@ -56,7 +56,7 @@ console.log('the user made a guess!');
 console.log(0);
         guessSpan.textContent = 'You Win!!!';
         document.getElementById('guess-input').disabled = true;
-
+        document.getElementById('guess-button').disabled = true;
     } else if (judge === -1) {
 console.log(-1);
         triesRemaining--;
@@ -71,6 +71,7 @@ console.log(1);
     if (triesRemaining === 0) {
         guessSpan.textContent = 'You Lose.';
         document.getElementById('guess-input').disabled = true;
+        document.getElementById('guess-button').disabled = true;
     }
 
 
