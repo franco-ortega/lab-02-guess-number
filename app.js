@@ -12,10 +12,6 @@ console.log(guessInput, guessButton, guessSpan, triesRemainingSpan, resultsSpan,
 // initialize state
 
 let triesRemaining = 4;
-const correctNumber = Math.floor((Math.random() *20) +1);
-const guess = guessInput;
-
-console.log(triesRemaining, correctNumber, guess);
 
 export function compareNumbers(guess, correctNumber) {
     if (guess === correctNumber) {
@@ -32,7 +28,7 @@ export function compareNumbers(guess, correctNumber) {
 
 /*
 When user clicks button, the game will
--generate a realNumber
+-generate a correctNumber
 -take the guess from the INPUT
 -compare it to the correctNumber
 -tell user if they WIN or guessed wrong
@@ -42,5 +38,29 @@ When user clicks button, the game will
 */
 
 guessButton.addEventListener('click', () => {
-    console.log('the user made a guess!');
+
+/*
+console.log(`user starts with ${triesRemaining} tries`);
+
+console.log('the user made a guess!');
+*/
+    const correctNumber = Math.floor((Math.random() *20) +1);
+
+    const guess = guessInput.valueAsNumber;
+
+    const judge = compareNumbers(guess, correctNumber);
+
+    if (judge === 0) {
+        console.log(0);
+    } else if (judge === -1) {
+        console.log(-1);
+    } else if (judge === 1) {
+        console.log(1);
+    }
+
+console.log(`user guesses ${guess}!`);
+console.log(correctNumber);
+console.log(judge);
+
+
 });
