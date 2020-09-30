@@ -9,6 +9,7 @@ const resetButton = document.getElementById('reset-button');
 
 console.log(guessInput, guessButton, guessSpan, triesRemainingSpan, resultsSpan, resetButton);
 
+console.log(guessSpan.textContent)
 // initialize state
 
 let triesRemaining = 4;
@@ -37,6 +38,8 @@ When user clicks button, the game will
 ---no more input accepted
 */
 
+const correctNumber = Math.floor((Math.random() *20) +1);
+
 guessButton.addEventListener('click', () => {
 
 /*
@@ -44,23 +47,36 @@ console.log(`user starts with ${triesRemaining} tries`);
 
 console.log('the user made a guess!');
 */
-    const correctNumber = Math.floor((Math.random() *20) +1);
-
     const guess = guessInput.valueAsNumber;
-
     const judge = compareNumbers(guess, correctNumber);
 
+
+
     if (judge === 0) {
-        console.log(0);
+console.log(0);
+        guessSpan.textContent = 'You Win!!!';
+        document.getElementById('guess-input').disabled = true;
+
     } else if (judge === -1) {
-        console.log(-1);
+console.log(-1);
+        triesRemaining--;
+        guessSpan.textContent = 'Too Low!';
+
     } else if (judge === 1) {
-        console.log(1);
+console.log(1);
+        triesRemaining--;
+        guessSpan.textContent = 'Too High!';
     }
 
-console.log(`user guesses ${guess}!`);
-console.log(correctNumber);
-console.log(judge);
+    if (triesRemaining === 0) {
+        guessSpan.textContent = 'You Lose.';
+        document.getElementById('guess-input').disabled = true;
+    }
 
+
+console.log(`user guesses ${guess}!`);
+console.log(correctNumber + ' is the correct number');
+console.log(judge);
+console.log(triesRemaining + ' tries remaining');
 
 });
