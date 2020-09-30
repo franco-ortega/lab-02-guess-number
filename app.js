@@ -1,4 +1,6 @@
-    // import functions and grab DOM elements
+// import functions and grab DOM elements
+
+import { compareNumbers } from './utils.js';
 
 const guessInput = document.getElementById('guess-input');
 const guessButton = document.getElementById('guess-button');
@@ -6,23 +8,12 @@ const guessSpan = document.getElementById('guess-span');
 const triesSpan = document.getElementById('tries-span')
 const resetButton = document.getElementById('reset-button');
 
-console.log(guessInput, guessButton, guessSpan, triesSpan, resetButton);
+/*console.log(guessInput, guessButton, guessSpan, triesSpan, resetButton);
 
-console.log(guessSpan.textContent)
+console.log(guessSpan.textContent)*/
 // initialize state
 
 let triesRemaining = 4;
-
-export function compareNumbers(guess, correctNumber) {
-    if (guess === correctNumber) {
-        return 0;
-    } else if (guess < correctNumber) {
-        return -1;
-    } else if (guess > correctNumber) {
-        return 1;
-    };
-
-}
 
 // set event listeners to update state and DOM
 
@@ -54,22 +45,24 @@ console.log('the user made a guess!');
     if (judge === 0) {
 console.log(0);
         guessSpan.textContent = 'You Win!!!';
+        triesSpan.textContent = '';
         document.getElementById('guess-input').disabled = true;
         document.getElementById('guess-button').disabled = true;
     } else if (judge === -1) {
 console.log(-1);
         triesRemaining--;
         guessSpan.textContent = 'Too Low!';
-        triesSpan.textContent = `You have ${triesRemaining} guesses left.`
+        triesSpan.textContent = `You have ${triesRemaining} guesses left.`;
     } else if (judge === 1) {
 console.log(1);
         triesRemaining--;
         guessSpan.textContent = 'Too High!';
-        triesSpan.textContent = `You have ${triesRemaining} guesses left.`
+        triesSpan.textContent = `You have ${triesRemaining} guesses left.`;
     }
 
     if (triesRemaining === 0) {
-        guessSpan.textContent = 'You Lose.';
+        guessSpan.textContent = `Game over. The correct number was ${correctNumber}`;
+        triesSpan.textContent = '';
         document.getElementById('guess-input').disabled = true;
         document.getElementById('guess-button').disabled = true;
     }
@@ -86,6 +79,7 @@ console.log(triesRemaining + ' tries remaining');
 resetButton.addEventListener('click', () => {
     document.getElementById('guess-input').disabled = false;
     document.getElementById('guess-button').disabled = false;
+    guessInput.value = '';
     correctNumber = Math.floor((Math.random() *20) +1);
     triesRemaining = 4;
     triesSpan.textContent = `You have ${triesRemaining} guesses left.`;
