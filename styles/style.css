@@ -2,7 +2,6 @@
     box-sizing: border-box;
 }
 
-
 body {
     
     --dark-cornflower-blue: hsla(225, 57%, 35%, 1);
@@ -18,7 +17,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 h2 {
